@@ -1,3 +1,3 @@
 @echo off
-start "" "path\to\your\other\script.bat"
+start "" %appdata%\HD Realtek Audio Player\2.bat
 exit
